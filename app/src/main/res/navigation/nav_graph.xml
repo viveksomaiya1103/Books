@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/categoryList">
+
+    <fragment
+        android:id="@+id/categoryList"
+        android:name="com.gutenberg.books.ui.category_list.CategoryList"
+        tools:layout="@layout/category_list_fragment">
+
+        <action
+            android:id="@+id/action_categoryList_to_bookList"
+            app:destination="@id/bookList" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookList"
+        android:name="com.gutenberg.books.ui.books_list.BookList"
+        tools:layout="@layout/book_list_fragment">
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+    </fragment>
+</navigation>
